@@ -11,6 +11,7 @@ router.post("/", async (req, res) => {
 
     const newProduct = new Product({
       name: req.body.name,
+      
       price: req.body.price,
       market_id: req.body.marketId,
     });
