@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt"); // Import bcrypt for password hashing
+const bcrypt = require("bcryptjs"); // Import bcrypt for password hashing
 const Staff = require("../models/staffModel");
 const District = require("../models/districtModel");
 const Role = require("../models/rolesModel"); // Import Role model
