@@ -35,7 +35,8 @@ app.use(express.json());
 // DB connection
 mongoose
   .connect(
-    "mongodb+srv://aumuhoza72:rc5iikZM76uEpBkN@cluster0.ko8kl.mongodb.net/priceUpdate?retryWrites=true&w=majority&appName=Cluster0"
+    "mongodb+srv://aumuhoza72:rc5iikZM76uEpBkN@cluster0.ko8kl.mongodb.net/priceUpdate?retryWrites=true&w=majority&appName=Cluster0",
+    { tls: true }
   )
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("Connection error", err));
@@ -275,7 +276,7 @@ app.post("/ussd", async (req, res) => {
     res.set("Content-Type", "text/plain");
     res.send(response);
   } catch (err) {
-    console.error(`Error handling USSD request: ${err.message}`);
+    console.error(`Error handling USSD request: ${err}`);
     res.status(500).send("Server error.");
   }
 });
